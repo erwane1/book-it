@@ -58,7 +58,7 @@ const roomSchema: Schema = new Schema({
   },
   address: {
     type: String,
-    required: [true, "Please enter room address"],
+    // required: [true, "Please enter room address"],
   },
   location: {
     type: {
@@ -151,7 +151,7 @@ const roomSchema: Schema = new Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
-    required: true,
+    required: false,
   },
   createdAt: {
     type: Date,
