@@ -17,7 +17,7 @@ export interface IReview extends Document {
   rating: number;
   comment: string;
 }
-export interface IRom extends Document {
+export interface IRoom extends Document {
   name: string;
   description: string;
   pricePerNight: number;
@@ -48,7 +48,7 @@ const roomSchema: Schema = new Schema({
   },
   description: {
     type: String,
-    required: [true, "Please enter room name"],
+    required: [true, "Please enter room description"],
     trim: true,
   },
   pricePerNight: {
@@ -58,7 +58,7 @@ const roomSchema: Schema = new Schema({
   },
   address: {
     type: String,
-    // required: [true, "Please enter room address"],
+    required: [true, "Please enter room address"],
   },
   location: {
     type: {
@@ -159,4 +159,5 @@ const roomSchema: Schema = new Schema({
   },
 });
 
-export default mongoose.models.Room || mongoose.model<IRom>("Room", roomSchema);
+export default mongoose.models.Room ||
+  mongoose.model<IRoom>("Room", roomSchema);
